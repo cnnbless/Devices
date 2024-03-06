@@ -7,4 +7,6 @@ add_executable(Devices main.cpp
         Keyboard.cpp
         Keyboard.h
         Mouse.cpp
-        Mouse.h)
+        Mouse.h
+        Headphones.cpp
+        Headphones.h)
