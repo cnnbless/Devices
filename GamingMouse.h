@@ -1,14 +1,31 @@
 //
-// Created by Tony on 06.03.2024.
+// Created by Tony on 29.02.2024.
 //
 
-#ifndef DEVICES_GAMINGMOUSE_H
-#define DEVICES_GAMINGMOUSE_H
+#ifndef DEVICESOOP_GAMINGMOUSE_H
+#define DEVICESOOP_GAMINGMOUSE_H
+#include "Mouse.h"
+#include <iostream>
 
+using namespace std;
 
-class GamingMouse {
+class GamingMouse:public Mouse{
+private:
+    int AdditionalButtons;
+    bool rgb;
+public:
+    int set_AdditionalButtons(int AdditionalButtons);
+    int get_AdditionalButtons();
+    bool set_rgb(bool rgb);
+    bool get_rgb();
+    void info();
+
+    GamingMouse &operator=(const GamingMouse &other);
+
+    GamingMouse(string name="None",float weight=0, string typeOfMaterial="None",bool wireless=false,int AAdditionalButtons=0,bool rgb=false);
+    ~GamingMouse();
 
 };
 
 
-#endif //DEVICES_GAMINGMOUSE_H
+#endif //DEVICESOOP_GAMINGMOUSE_H
