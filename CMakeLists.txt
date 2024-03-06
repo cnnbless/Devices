@@ -13,4 +13,6 @@ add_executable(Devices main.cpp
         MechanicKeyboard.cpp
         MechanicKeyboard.h
         InEarHeadphones.cpp
-        InEarHeadphones.h)
+        InEarHeadphones.h
+        GamingMouse.cpp
+        GamingMouse.h)
