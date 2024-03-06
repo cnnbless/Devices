@@ -85,6 +85,12 @@ build CMakeFiles/Devices.dir/InEarHeadphones.cpp.obj: CXX_COMPILER__Devices_unsc
   OBJECT_DIR = CMakeFiles\Devices.dir
   OBJECT_FILE_DIR = CMakeFiles\Devices.dir
 
+build CMakeFiles/Devices.dir/GamingMouse.cpp.obj: CXX_COMPILER__Devices_unscanned_Debug C$:/Users/Tony/CLionProjects/Devices/GamingMouse.cpp || cmake_object_order_depends_target_Devices
+  DEP_FILE = CMakeFiles\Devices.dir\GamingMouse.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Devices.dir
+  OBJECT_FILE_DIR = CMakeFiles\Devices.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Devices
@@ -93,7 +99,7 @@ build CMakeFiles/Devices.dir/InEarHeadphones.cpp.obj: CXX_COMPILER__Devices_unsc
 #############################################
 # Link the executable Devices.exe
 
-build Devices.exe: CXX_EXECUTABLE_LINKER__Devices_Debug CMakeFiles/Devices.dir/main.cpp.obj CMakeFiles/Devices.dir/Keyboard.cpp.obj CMakeFiles/Devices.dir/Mouse.cpp.obj CMakeFiles/Devices.dir/Headphones.cpp.obj CMakeFiles/Devices.dir/MechanicKeyboard.cpp.obj CMakeFiles/Devices.dir/InEarHeadphones.cpp.obj
+build Devices.exe: CXX_EXECUTABLE_LINKER__Devices_Debug CMakeFiles/Devices.dir/main.cpp.obj CMakeFiles/Devices.dir/Keyboard.cpp.obj CMakeFiles/Devices.dir/Mouse.cpp.obj CMakeFiles/Devices.dir/Headphones.cpp.obj CMakeFiles/Devices.dir/MechanicKeyboard.cpp.obj CMakeFiles/Devices.dir/InEarHeadphones.cpp.obj CMakeFiles/Devices.dir/GamingMouse.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Devices.dir
