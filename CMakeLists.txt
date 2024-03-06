@@ -9,4 +9,6 @@ add_executable(Devices main.cpp
         Mouse.cpp
         Mouse.h
         Headphones.cpp
-        Headphones.h)
+        Headphones.h
+        MechanicKeyboard.cpp
+        MechanicKeyboard.h)
