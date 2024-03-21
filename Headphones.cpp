@@ -1,9 +1,11 @@
 //
 // Created by Tony on 06.03.2024.
 //
+//
+// Created by Endi on 27.02.2024.
+//
 
 #include "Headphones.h"
-
 #include <iostream>
 using namespace std;
 string Headphones::set_name(string name)
@@ -45,6 +47,23 @@ void Headphones::info()
         <<"\nВага наушників: "<<weight<<" кг"
         <<"\nТип наушників наушників: "<<type_of_material
         <<"\nНаушники з мікрофоном: "<<microphone<<endl;
+}
+
+
+void Headphones::print_name_class() const {
+    cout<<"Headphones"<<endl;
+}
+
+void Headphones::print(std::ostream &os) const {
+    os<<"INFO: "<<endl
+      <<"Назва наушників: "<<name
+      <<"\nВага наушників: "<<weight<<" кг"
+      <<"\nТип наушників наушників: "<<type_of_material
+      <<"\nНаушники з мікрофоном: "<<microphone<<endl;
+}
+
+void Headphones::print_class_name() const {
+    cout<<"Class name: Headphones"<<endl;
 }
 
 Headphones::Headphones(std::string &&NameOfKeyboard, float Weight, std::string &&TypeOfMaterial, bool MICROPHONE):

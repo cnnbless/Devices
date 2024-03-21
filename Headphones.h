@@ -1,15 +1,12 @@
-//
-// Created by Tony on 06.03.2024.
-//
-
 #ifndef DEVICESOOP_HEADPHONES_H
 #define DEVICESOOP_HEADPHONES_H
 
 
 #include <iostream>
+#include "Printable.h"
 
 using namespace std;
-class Headphones {
+class Headphones: public Printable{
 private:
     string name;
     float weight;
@@ -27,9 +24,13 @@ public:
     bool get_microphone();
     void info();
 
+    virtual void print_name_class()const;
+    virtual void print(std::ostream &os) const override;
+    virtual void print_class_name()const override;
+
     Headphones(string &&NameOfHeadphones="None", float Weight=0, string &&TypeOfMaterial="None", bool MICROPHONE=false);
     Headphones(const Headphones &&other)noexcept;
-    ~Headphones();
+    virtual ~Headphones();
 };
 
 
