@@ -15,4 +15,6 @@ add_executable(Devices main.cpp
         InEarHeadphones.cpp
         InEarHeadphones.h
         GamingMouse.cpp
-        GamingMouse.h)
+        GamingMouse.h
+        Printable.cpp
+        Printable.h)

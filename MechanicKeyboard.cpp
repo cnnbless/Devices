@@ -2,8 +2,8 @@
 // Created by Tony on 06.03.2024.
 //
 
-#include "MechanicKeyboard.h"
 
+#include "MechanicKeyboard.h"
 #include "Keyboard.h"
 
 using namespace std;
@@ -19,10 +19,21 @@ void MechanicKeyboard::info() {
     cout<<"Колір клавіатури: "<<colorOfKeyboard<<endl;
 }
 
-MechanicKeyboard::MechanicKeyboard(string name, float weight, string typeOfMaterial,string &&colorOfKeyboard){
-    Keyboard::set_name(name);
-    Keyboard::set_weight(weight);
-    Keyboard::set_TypeOfMaterial(typeOfMaterial);
+void MechanicKeyboard::doSomething() const{
+    cout<<"MechanicKeyboard"<<endl;
+}
+
+void MechanicKeyboard::print(std::ostream &os) const {
+    Keyboard::print(os);
+    os<<"Колір клавіатури: "<<colorOfKeyboard<<endl;
+}
+
+void MechanicKeyboard::print_class_name() const {
+    cout<<"Class name: MechanicKeyboard"<<endl;
+}
+
+MechanicKeyboard::MechanicKeyboard(string name, float weight, string typeOfMaterial,string &&colorOfKeyboard):
+        Keyboard{string{name},float{weight},string{typeOfMaterial}}{
     this->colorOfKeyboard=colorOfKeyboard;
     cout<<"MechanicKeyboard constructor"<<endl;
 }

@@ -17,11 +17,16 @@ public:
     string get_colorOfKeyboard();
     void info();
 
+    void doSomething()const;
+
+    void print(std::ostream &os) const override;
+    void print_class_name()const override;
+
     MechanicKeyboard(string name="None",float weight=0, string typeOfMaterial="None",string &&colorOfKeyboard="None");
     MechanicKeyboard(const MechanicKeyboard &other);
-    ~MechanicKeyboard();
+    ~MechanicKeyboard() override;
 
 };
 
 
-#endif //DEVICESOOP_MECHANICKE
+#endif //DEVICESOOP_MECHANICKEYBOARD_H

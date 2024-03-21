@@ -1,8 +1,5 @@
-//
-// Created by Tony on 06.03.2024.
-//
-
 #include "Keyboard.h"
+#include "Printable.h"
 #include <iostream>
 
 string Keyboard::set_name(string name)
@@ -36,6 +33,22 @@ void Keyboard::info() const
         <<"Назва клавіатури: "<<name
         <<"\nВага клавіатури: "<<weight<<" кг"
         <<"\nТип матеріалу клавіатури: "<<type_of_material<<endl;
+}
+
+void Keyboard::doSomething() const
+{
+    cout<<"Keyboard"<<endl;
+}
+
+void Keyboard::print(std::ostream &os) const {
+    os<<"INFO: "<<endl
+      <<"Назва клавіатури: "<<name
+      <<"\nВага клавіатури: "<<weight<<" кг"
+      <<"\nТип матеріалу клавіатури: "<<type_of_material<<endl;
+}
+
+void Keyboard::print_class_name() const {
+    cout<<"Class name: Keyboard"<<endl;
 }
 
 Keyboard::Keyboard()
