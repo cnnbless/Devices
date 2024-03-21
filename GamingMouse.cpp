@@ -1,7 +1,3 @@
-//
-// Created by Tony on 06.03.2024.
-//
-
 #include "GamingMouse.h"
 #include "Mouse.h"
 #include <iostream>
@@ -24,6 +20,20 @@ void GamingMouse::info() {
     cout<<"RGB підсвітка: "<<rgb<<endl;
 }
 
+void GamingMouse::doSomething() const {
+    cout<<"GamingMouse"<<endl;
+}
+
+void GamingMouse::print(std::ostream &os) const {
+    Mouse::print(os);
+    os<<"Кількість додаткових кнопок: "<<AdditionalButtons<<endl;
+    os<<"RGB підсвітка: "<<rgb<<endl;
+}
+
+void GamingMouse::print_class_name() const {
+    cout<<"Class name: GamingMouse"<<endl;
+}
+
 GamingMouse &GamingMouse::operator=(const GamingMouse &other) {
     if(this!=&other){
         Mouse::operator=(other);
@@ -33,12 +43,9 @@ GamingMouse &GamingMouse::operator=(const GamingMouse &other) {
     return *this;
 }
 
-GamingMouse::GamingMouse(std::string name, float weight, std::string typeOfMaterial, bool wireless,int AAdditionalButtons, bool rgb)
+GamingMouse::GamingMouse(std::string name, float weight, std::string typeOfMaterial, bool wireless,int AAdditionalButtons, bool rgb):
+        Mouse{string{name},float{weight},string{typeOfMaterial},bool{wireless} }
 {
-    Mouse::set_name(name);
-    Mouse::set_weight(weight);
-    Mouse::set_TypeOfMaterial(typeOfMaterial);
-    Mouse::set_wireless(wireless);
     this->AdditionalButtons=AAdditionalButtons;
     this->rgb=rgb;
     cout<<"GamingMouse constructor"<<endl;

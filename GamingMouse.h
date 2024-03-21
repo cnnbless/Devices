@@ -1,5 +1,5 @@
 //
-// Created by Tony on 29.02.2024.
+// Created by Endi on 29.02.2024.
 //
 
 #ifndef DEVICESOOP_GAMINGMOUSE_H
@@ -18,12 +18,16 @@ public:
     int get_AdditionalButtons();
     bool set_rgb(bool rgb);
     bool get_rgb();
-    void info();
+    void info()override;
+
+    void doSomething()const override;
+    void print(std::ostream &os) const override;
+    void print_class_name()const override;
 
     GamingMouse &operator=(const GamingMouse &other);
 
     GamingMouse(string name="None",float weight=0, string typeOfMaterial="None",bool wireless=false,int AAdditionalButtons=0,bool rgb=false);
-    ~GamingMouse();
+    ~GamingMouse() override;
 
 };
 
