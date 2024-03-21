@@ -1,7 +1,6 @@
 //
-// Created by Tony on 06.03.2024.
+// Created by Endi on 29.02.2024.
 //
-
 
 #ifndef DEVICESOOP_INEARHEADPHONES_H
 #define DEVICESOOP_INEARHEADPHONES_H
@@ -18,9 +17,14 @@ public:
     bool set_wired(bool wired);
     bool get_wired();
     void info();
+
+    void print_name_class() const override;
+    void print(std::ostream &os) const override;
+    void print_class_name()const override;
+
     InEarHeadphones(string name="None",float weight=0, string typeOfMaterial="None",bool microphone=false,bool wired= false);
     InEarHeadphones(InEarHeadphones&& other)noexcept;
-    ~InEarHeadphones();
+    ~InEarHeadphones() override;
 
 };
 

@@ -1,5 +1,5 @@
 //
-// Created by Tony on 06.03.2024.
+// Created by Endi on 29.02.2024.
 //
 
 #include "InEarHeadphones.h"
@@ -16,11 +16,23 @@ void InEarHeadphones::info() {
     Headphones::info();
     cout<<"Провідні наушники: "<<wired<<endl;
 }
-InEarHeadphones::InEarHeadphones(std::string name, float weight, std::string typeOfMaterial,bool microphone, bool wired) {
-    Headphones::set_name(name);
-    Headphones::set_weight(weight);
-    Headphones::set_TypeOfMaterial(typeOfMaterial);
-    Headphones::set_microphone(microphone);
+
+void InEarHeadphones::print_name_class() const {
+    cout<<"InEarHeadphones"<<endl;
+}
+
+void InEarHeadphones::print(std::ostream &os) const {
+    Headphones::print(os);
+    os<<"Провідні наушники: "<<wired<<endl;
+
+}
+void InEarHeadphones::print_class_name() const {
+    cout<<"Class name: InEarHeadphones"<<endl;
+}
+
+InEarHeadphones::InEarHeadphones(std::string name, float weight, std::string typeOfMaterial,bool microphone, bool wired):
+        Headphones{string{name},float{weight},string{typeOfMaterial}
+                ,bool{microphone} }{
     this->wired=wired;
     cout<<"InEarHeadphones constructor"<<endl;
 }
