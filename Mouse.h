@@ -5,11 +5,11 @@
 #ifndef DEVICESOOP_MOUSE_H
 #define DEVICESOOP_MOUSE_H
 
-
+#include "Printable.h"
 #include <iostream>
 
 using namespace std;
-class Mouse {
+class Mouse: public Printable{
 
 private:
     string name;
@@ -27,10 +27,16 @@ public:
     string get_TypeOfMaterial();
     bool set_wireless(bool wireless);
     bool get_wireless();
-    void info();
+    virtual void info();
     int get_amountOfMice();
 
-    friend std::ostream  &operator<<(std::ostream &os, const Mouse &mouse);
+    virtual void doSomething()const;
+    virtual void Click()const final;
+
+    virtual void print(std::ostream &os) const override;
+    virtual void print_class_name()const override;
+
+//    friend std::ostream  &operator<<(std::ostream &os, const Mouse &mouse);
     friend std::istream &operator>>(std::istream &is, Mouse &mouse);
 
     Mouse &operator=(const Mouse &other);
@@ -47,7 +53,7 @@ public:
     Mouse(string NameOfMouse, float Weight);
     Mouse(string NameOfMouse, float Weight, string TypeOfMaterial);
     Mouse(string NameOfMouse, float Weight, string TypeOfMaterial, bool Wireless);
-    ~Mouse();
+    virtual ~Mouse();
 };
 
 

@@ -52,13 +52,24 @@ int Mouse::get_amountOfMice() {
     return AmountOfMice;
 }
 
-std::ostream &operator<<(std::ostream &os, const Mouse &mouse) {
-    os << "Назва мишки: " <<mouse.name  << endl;
-    os << "Вага мишки: " <<mouse.weight  << endl;
-    os << "Тип матеріалу мишки: "<< mouse.type_of_material<<endl;
-    os << "Провідна: "<<mouse.wireless<<endl;
-    return os;
+//std::ostream &operator<<(std::ostream &os, const Mouse &mouse) {
+//    os << "Назва мишки: " <<mouse.name  << endl;
+//    os << "Вага мишки: " <<mouse.weight  << endl;
+//    os << "Тип матеріалу мишки: "<< mouse.type_of_material<<endl;
+//    os << "Провідна: "<<mouse.wireless<<endl;
+//    return os;
+//}
+
+void Mouse::print(std::ostream &os) const {
+    os << "Назва мишки: " <<name  << endl;
+    os << "Вага мишки: " <<weight  << endl;
+    os << "Тип матеріалу мишки: "<<type_of_material<<endl;
+    os << "Провідна: "<<wireless<<endl;
 }
+void Mouse::print_class_name() const {
+    cout<<"Class name: Mouse"<<endl;
+}
+
 std::istream &operator>>(std::istream &is, Mouse &mouse) {
     cout<<"Введіть назву мишки: ";
     is >> mouse.name;
@@ -124,6 +135,16 @@ Mouse::Mouse()
     wireless= false;
     cout<<"called Mouse constructor"<<endl;
 }
+
+void Mouse::doSomething() const
+{
+    cout<<"Mouse"<<endl;
+}
+
+void Mouse::Click()const  {
+    cout<<"Click!!!"<<endl;
+}
+
 Mouse::Mouse(std::string NameOfMouse): Mouse()
 {
     name=NameOfMouse;
