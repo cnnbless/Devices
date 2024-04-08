@@ -97,6 +97,24 @@ build CMakeFiles/Devices.dir/Printable.cpp.obj: CXX_COMPILER__Devices_unscanned_
   OBJECT_DIR = CMakeFiles\Devices.dir
   OBJECT_FILE_DIR = CMakeFiles\Devices.dir
 
+build CMakeFiles/Devices.dir/User.cpp.obj: CXX_COMPILER__Devices_unscanned_Debug C$:/Users/Tony/CLionProjects/Devices/User.cpp || cmake_object_order_depends_target_Devices
+  DEP_FILE = CMakeFiles\Devices.dir\User.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Devices.dir
+  OBJECT_FILE_DIR = CMakeFiles\Devices.dir
+
+build CMakeFiles/Devices.dir/Functions.cpp.obj: CXX_COMPILER__Devices_unscanned_Debug C$:/Users/Tony/CLionProjects/Devices/Functions.cpp || cmake_object_order_depends_target_Devices
+  DEP_FILE = CMakeFiles\Devices.dir\Functions.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Devices.dir
+  OBJECT_FILE_DIR = CMakeFiles\Devices.dir
+
+build CMakeFiles/Devices.dir/Admin.cpp.obj: CXX_COMPILER__Devices_unscanned_Debug C$:/Users/Tony/CLionProjects/Devices/Admin.cpp || cmake_object_order_depends_target_Devices
+  DEP_FILE = CMakeFiles\Devices.dir\Admin.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Devices.dir
+  OBJECT_FILE_DIR = CMakeFiles\Devices.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Devices
@@ -105,7 +123,7 @@ build CMakeFiles/Devices.dir/Printable.cpp.obj: CXX_COMPILER__Devices_unscanned_
 #############################################
 # Link the executable Devices.exe
 
-build Devices.exe: CXX_EXECUTABLE_LINKER__Devices_Debug CMakeFiles/Devices.dir/main.cpp.obj CMakeFiles/Devices.dir/Keyboard.cpp.obj CMakeFiles/Devices.dir/Mouse.cpp.obj CMakeFiles/Devices.dir/Headphones.cpp.obj CMakeFiles/Devices.dir/MechanicKeyboard.cpp.obj CMakeFiles/Devices.dir/InEarHeadphones.cpp.obj CMakeFiles/Devices.dir/GamingMouse.cpp.obj CMakeFiles/Devices.dir/Printable.cpp.obj
+build Devices.exe: CXX_EXECUTABLE_LINKER__Devices_Debug CMakeFiles/Devices.dir/main.cpp.obj CMakeFiles/Devices.dir/Keyboard.cpp.obj CMakeFiles/Devices.dir/Mouse.cpp.obj CMakeFiles/Devices.dir/Headphones.cpp.obj CMakeFiles/Devices.dir/MechanicKeyboard.cpp.obj CMakeFiles/Devices.dir/InEarHeadphones.cpp.obj CMakeFiles/Devices.dir/GamingMouse.cpp.obj CMakeFiles/Devices.dir/Printable.cpp.obj CMakeFiles/Devices.dir/User.cpp.obj CMakeFiles/Devices.dir/Functions.cpp.obj CMakeFiles/Devices.dir/Admin.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Devices.dir
