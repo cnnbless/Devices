@@ -1,6 +1,7 @@
 #include "GamingMouse.h"
 #include "Mouse.h"
 #include <iostream>
+#include <fstream>
 
 int GamingMouse::set_AdditionalButtons(int AdditionalButtons) {
     return this->AdditionalButtons=AdditionalButtons;
@@ -14,24 +15,42 @@ bool GamingMouse::set_rgb(bool rgb) {
 bool GamingMouse::get_rgb() {
     return rgb;
 }
-void GamingMouse::info() {
-    Mouse::info();
-    cout<<"Кількість додаткових кнопок: "<<AdditionalButtons<<endl;
-    cout<<"RGB підсвітка: "<<rgb<<endl;
-}
 
-void GamingMouse::doSomething() const {
-    cout<<"GamingMouse"<<endl;
+void GamingMouse::writeProduct() {
+    Mouse::writeProduct();
+    ofstream file("C:\\Users\\Tony\\CLionProjects\\Devices\\files\\Products.txt", ios::app);
+    string data=","+ to_string(AdditionalButtons)+",";
+    if(rgb){
+        data+="1";
+    }
+    else{
+        data+="0";
+    }
+    file<<data;
+    file.close();
 }
 
 void GamingMouse::print(std::ostream &os) const {
-    Mouse::print(os);
+    os<<endl<<"---Товар: Геймерська мишка---"<<endl
+      <<"Номер товару: "<<Mouse::get_product_number()<<endl
+      <<"Назва: "<<Mouse::get_name()<<endl
+      <<"Вага: "<<Mouse::get_weight()<<endl
+      <<"Матеріал: "<<Mouse::get_TypeOfMaterial()<<endl;
+    if(Mouse::get_wireless()){os<<"Провідна: +"<<endl;}
+    else{os<<"Провідна: -"<<endl;}
     os<<"Кількість додаткових кнопок: "<<AdditionalButtons<<endl;
-    os<<"RGB підсвітка: "<<rgb<<endl;
+    os<<"Підсвітка: ";
+    if (rgb){os<<"+";}
+    else {os<<"-";}
+    os<<endl<<"Ціна: "<<Mouse::get_price()<<endl;
 }
 
-void GamingMouse::print_class_name() const {
-    cout<<"Class name: GamingMouse"<<endl;
+void GamingMouse::readData(std::istream &is) {
+    Mouse::readData(is);
+    cout<<"Введіть кількість додаткових кнопок: ";
+    is >> AdditionalButtons;
+    cout<<"Введіть чи є підсвітка (1-так, 0-ні): ";
+    is >> rgb;
 }
 
 GamingMouse &GamingMouse::operator=(const GamingMouse &other) {
@@ -43,13 +62,16 @@ GamingMouse &GamingMouse::operator=(const GamingMouse &other) {
     return *this;
 }
 
-GamingMouse::GamingMouse(std::string name, float weight, std::string typeOfMaterial, bool wireless,int AAdditionalButtons, bool rgb):
-        Mouse{string{name},float{weight},string{typeOfMaterial},bool{wireless} }
+GamingMouse::GamingMouse(int product_number, std::string &&name, float weight, std::string &&type_of_material,
+                         float price, bool wireless, int AAdditionalButtons, bool rgb):
+        Mouse{int{product_number},string{name},float{weight}
+                ,string{type_of_material},float{price}, bool{wireless}}
 {
     this->AdditionalButtons=AAdditionalButtons;
     this->rgb=rgb;
-    cout<<"GamingMouse constructor"<<endl;
+    //cout<<"GamingMouse constructor"<<endl;
 }
+
 GamingMouse::~GamingMouse() {
-    cout<<"GamingMouse destructor"<<endl;
+    //cout<<"GamingMouse destructor"<<endl;
 }

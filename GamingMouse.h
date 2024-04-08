@@ -18,15 +18,14 @@ public:
     int get_AdditionalButtons();
     bool set_rgb(bool rgb);
     bool get_rgb();
-    void info()override;
 
-    void doSomething()const override;
     void print(std::ostream &os) const override;
-    void print_class_name()const override;
-
+    void readData(std::istream& is) override;
+    void writeProduct() override;
     GamingMouse &operator=(const GamingMouse &other);
 
-    GamingMouse(string name="None",float weight=0, string typeOfMaterial="None",bool wireless=false,int AAdditionalButtons=0,bool rgb=false);
+    GamingMouse(int product_number=0,string &&name="None", float weight=0, string &&type_of_material="None"
+            ,float price=0, bool wireless=false,int AAdditionalButtons=0,bool rgb=false);
     ~GamingMouse() override;
 
 };
