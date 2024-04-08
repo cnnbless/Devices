@@ -15,15 +15,15 @@ private:
     bool wired;
 public:
     bool set_wired(bool wired);
-    bool get_wired();
-    void info();
+    bool get_wired()const;
 
-    void print_name_class() const override;
     void print(std::ostream &os) const override;
-    void print_class_name()const override;
-
-    InEarHeadphones(string name="None",float weight=0, string typeOfMaterial="None",bool microphone=false,bool wired= false);
+    void readData(std::istream& is) override;
+    void writeProduct() override;
     InEarHeadphones(InEarHeadphones&& other)noexcept;
+
+    InEarHeadphones(int product_number=0,string &&name="None", float weight=0, string &&type_of_material="None"
+            ,float price=0, bool microphone= false, bool wired = false);
     ~InEarHeadphones() override;
 
 };
