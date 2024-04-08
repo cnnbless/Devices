@@ -7,52 +7,38 @@
 
 #include "Printable.h"
 #include <iostream>
-
 using namespace std;
 class Mouse: public Printable{
 
 private:
+    int product_number;
     string name;
     float weight;
     string type_of_material;
     bool wireless;
-    static int AmountOfMice;
+    float price;
 
 public:
+    int set_product_number(int product_number);
+    int get_product_number()const;
     string set_name(string name);
-    string get_name();
+    string get_name()const;
     float set_weight(float weight);
-    float get_weight();
+    float get_weight()const;
     string set_TypeOfMaterial(string typeOfMaterial);
-    string get_TypeOfMaterial();
+    string get_TypeOfMaterial()const;
     bool set_wireless(bool wireless);
-    bool get_wireless();
-    virtual void info();
-    int get_amountOfMice();
-
-    virtual void doSomething()const;
-    virtual void Click()const final;
+    bool get_wireless()const;
+    float set_price(float price);
+    float get_price()const;
 
     virtual void print(std::ostream &os) const override;
-    virtual void print_class_name()const override;
-
-//    friend std::ostream  &operator<<(std::ostream &os, const Mouse &mouse);
-    friend std::istream &operator>>(std::istream &is, Mouse &mouse);
-
+    virtual void readData(std::istream& is) override;
+    virtual void writeProduct() override;
     Mouse &operator=(const Mouse &other);
-    Mouse operator+(float num);
-    Mouse operator-(float num);
-    Mouse operator+=(float num);
-    Mouse operator-=(float num);
 
-    Mouse operator--();
-    Mouse operator++();
-
-    Mouse();
-    Mouse(string NameOfMouse);
-    Mouse(string NameOfMouse, float Weight);
-    Mouse(string NameOfMouse, float Weight, string TypeOfMaterial);
-    Mouse(string NameOfMouse, float Weight, string TypeOfMaterial, bool Wireless);
+    Mouse(int product_number=0,string &&name="None", float weight=0, string &&type_of_material="None",float price=0
+            , bool wireless=false);
     virtual ~Mouse();
 };
 
