@@ -17,4 +17,10 @@ add_executable(Devices main.cpp
         GamingMouse.cpp
         GamingMouse.h
         Printable.cpp
-        Printable.h)
+        Printable.h
+        User.cpp
+        User.h
+        Functions.cpp
+        Functions.h
+        Admin.cpp
+        Admin.h)
