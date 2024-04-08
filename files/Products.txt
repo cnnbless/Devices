@@ -1,0 +1,5 @@
+
+Keyboard,3,klava,1.000000,alumimium,790.000000
+Mouse,4,HyperX,0.200000,plastic,300.000000,1
+Keyboard,912,zoho,1.000000,lastic,299.000000
+Keyboard,6,popo,1.000000,plastic,123.000000
